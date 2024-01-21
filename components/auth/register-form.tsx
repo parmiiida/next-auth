@@ -11,7 +11,7 @@ import { Form , FormControl , FormField ,FormItem ,FormLabel ,FormMessage } from
 import { Button } from "../ui/button";
 import { FormError } from "../form-error";
 import { FormSuccess } from "../form-success";
-import { login } from "@/actions/login";
+import { register } from "@/actions/register";
 
 export const RegisterForm = () =>{
 
@@ -35,7 +35,7 @@ export const RegisterForm = () =>{
         setSuccess("");
 
         startTransition(() => {
-          login(values, )
+          register(values, )
             .then((data) => {
               if (data?.error) {
                 form.reset();
@@ -72,7 +72,7 @@ export const RegisterForm = () =>{
                             <FormItem>
                                 <FormLabel>Name</FormLabel>
                                 <FormControl>
-                                    <Input {...field} disabled={isPending} placeholder="john.doe" type="email"/>
+                                    <Input {...field} disabled={isPending} placeholder="john.doe"/>
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
