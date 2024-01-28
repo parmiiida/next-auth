@@ -12,6 +12,16 @@ export const {
   signIn,
   signOut
 } = NextAuth({
+  callbacks:{
+    async session({token , session}){
+      console.log({sessionToken : token})
+      return session
+    },
+    async jwt({token}){
+      console.log({token})
+      return token;
+    }
+  },
   adapter:PrismaAdapter(db),
   // we didnt use session in prismaSchema bcz it dowsnt work in edge
   session: { strategy:'jwt' },
