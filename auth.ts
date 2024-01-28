@@ -13,10 +13,10 @@ export const {
   signOut
 } = NextAuth({
   callbacks:{
-    async session({token , session}){
-      console.log({sessionToken : token})
-      return session
-    },
+    // async session({token , session}){
+    //   console.log({sessionToken : token})
+    //   return session
+    // },
     async jwt({token}){
       console.log({token})
       return token;
